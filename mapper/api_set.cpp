@@ -38,7 +38,7 @@ api_set::api_set() noexcept
 			}
 		}
 
-		this->schema.emplace(dll_name, hosts);
+		this->schema.insert(std::make_pair(dll_name, hosts));
 	}
 }
 

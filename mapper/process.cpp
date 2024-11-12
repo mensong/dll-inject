@@ -305,7 +305,7 @@ native::process::module_export native::process::get_module_export(std::uintptr_t
 		if (function_pointer >= directory_start && function_pointer <= directory_end)
 		{
 			// READ FORWARD
-			std::byte forwarded_name[50] = {};
+			std::byte forwarded_name[MAX_PATH] = { (std::byte)0 };
 			this->read_raw_memory(forwarded_name, function_pointer, sizeof(forwarded_name));
 
 			// PARSE FUNCTION NAME

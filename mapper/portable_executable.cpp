@@ -144,7 +144,7 @@ export_list portable_executable::get_exports(std::uintptr_t image_base) const no
 
 	for (unsigned int iter = 0; iter < export_dir->NumberOfFunctions; ++iter)
 	{
-		export_data data = { 0 };
+		export_data data = { .function_rva = NULL, .ordinal = NULL };
 		data.name = reinterpret_cast<char*>(image_base + reinterpret_cast<std::uint32_t*>(image_base + export_dir->AddressOfNames)[iter]);
 		data.ordinal = reinterpret_cast<std::uint16_t*>(image_base + export_dir->AddressOfNameOrdinals)[iter];
 		data.function_rva = image_base + reinterpret_cast<std::uint32_t*>(image_base + export_dir->AddressOfFunctions)[iter];

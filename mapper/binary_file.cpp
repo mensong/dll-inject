@@ -8,6 +8,8 @@ binary_file::binary_file(std::string_view file_path)
 {
 	// CREATE FILE STREAM TO SPECIFIED PATH
 	std::ifstream stream(file_path.data(), std::ios::binary);
+	if (!stream.good())
+		return;
 
 	// SKIP WHITESPACES
 	stream.unsetf(std::ios::skipws);

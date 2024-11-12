@@ -26,7 +26,7 @@ int main()
 	logger::log_formatted("Target process id", proc.get_id(), false);
 
 	// READ BUFFER
-	binary_file image("C:\\Users\\Admin\\Google Drive\\TestPEs\\DLLTEST64.dll");
+	binary_file image("TestDll.dll");
 
 	if (image.buffer().size() == 0x00)
 	{

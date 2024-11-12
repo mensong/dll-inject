@@ -1,6 +1,8 @@
 #pragma once
 #include <Windows.h>
-#include <unordered_map>
+#include <string>
+#include <map>
+#include <vector>
 
 struct API_SET_VALUE_ENTRY
 {
@@ -60,7 +62,7 @@ struct API_SET_NAMESPACE_ARRAY
 };
 
 
-using map_api_schema = std::unordered_map<std::wstring, std::vector<std::wstring>>;
+using map_api_schema = std::map<std::wstring, std::vector<std::wstring>>;
 class api_set
 {
 public:
